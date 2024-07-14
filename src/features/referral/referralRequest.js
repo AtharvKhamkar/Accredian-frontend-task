@@ -1,7 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import conf from "../../conf/conf";
 
-const USER_URL = import.meta.env.VITE_BASE_URL;
+const USER_URL = conf.projectBaseUrl;
 
 
 export const addReferral = createAsyncThunk(

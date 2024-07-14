@@ -1,7 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import conf from "../../conf/conf";
 import axios from "axios";
 
-const USER_URL = import.meta.env.VITE_BASE_URL;
+const USER_URL = conf.projectBaseUrl;
 
 export const fetchCourses = createAsyncThunk(
     'courses/all',
