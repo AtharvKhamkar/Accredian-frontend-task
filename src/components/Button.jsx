@@ -3,7 +3,7 @@ import React from 'react';
 const Button = ({
   children,
   type = 'button',
-  bgColor = 'bg-[#1A73E8]',
+  bgColor = 'bg-btnColor',
   textColor = 'text-[#FFFFFF]',
   className = '',
   ...props

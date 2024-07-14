@@ -44,7 +44,7 @@ const Header = () => {
           {navItems.map((item) => (
             <Link
               to={item.slug}
-              className='font-[500] text-base text-[#1A202C] font-inter'
+              className='font-[500] text-base text-textColorDark font-inter'
             >
               {item.name}
             </Link>

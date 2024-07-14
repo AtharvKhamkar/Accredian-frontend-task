@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        btnColor: '#1A73E8',
+        textColorDark:'#1A202C'
+      },
       fontFamily: {
         inter:['Inter','sans-serif']
       }

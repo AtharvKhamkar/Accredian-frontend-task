@@ -1,0 +1,65 @@
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import Button from '../components/Button';
+import Input from '../components/Input';
+import { loginUser } from '../features/auth/authRequest';
+
+const LoginPage = () => {
+  const { register, handleSubmit } = useForm();
+  const [error, setError] = useState('');
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const login = async (data) => {
+    console.log(data);
+    setError('');
+    await dispatch(loginUser(data));
+    navigate('/');
+    try {
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  return (
+    <div className='w-full min-h-screen bg-[#eeeeee] py-8'>
+      <div className='w-1/2 bg-[#ffffff] flex flex-col justify-center  rounded-lg mx-auto p-4'>
+        <p className='text-start text-md font-bold'>Welcome to Accredian</p>
+        {error && <p className='text-red-500 mt-8 text-center'>{error}</p>}
+        <form onSubmit={handleSubmit(login)}>
+          <div className='space-y-5'>
+            <Input
+              label='Email'
+              placeholder='Enter your email'
+              type='email'
+              {...register('email', {
+                required: true,
+                validate: {
+                  matchPatern: (value) =>
+                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                    'Email address must be a valid address',
+                },
+              })}
+            />
+            <Input
+              label='Password'
+              placeholder='Enter your password'
+              type='password'
+              {...register('password', {
+                required: true,
+              })}
+            />
+            <Button children='Login' type='submit' className='justify-center' />
+          </div>
+        </form>
+        <span className='text-textColorDark text-sm py-2 cursor-pointer hover:underline'>
+          Don't have account? Create account
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default LoginPage;
