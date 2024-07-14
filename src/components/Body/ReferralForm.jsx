@@ -48,8 +48,8 @@ const ReferralForm = () => {
   };
 
   return (
-    <div className='w-full min-h-screen bg-[#eeeeee] py-8'>
-      <div className='w-1/2 bg-[#ffffff] flex flex-col justify-center rounded-lg mx-auto p-4'>
+    <div className='w-full min-h-screen py-8'>
+      <div className='flex bg-[#B7D1FF] flex-col justify-center rounded-lg mx-auto p-4'>
         <p className='text-start text-md font-bold text-textColorDark'>
           Welcome to Accredian.
         </p>

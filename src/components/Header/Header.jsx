@@ -50,7 +50,7 @@ const Header = () => {
             </Link>
           ))}
           <div className='flex gap-4 items-center'>
-            <Link>
+            <Link to='/login'>
               <Button children='Login' />
             </Link>
             <Link>

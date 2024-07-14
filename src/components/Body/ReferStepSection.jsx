@@ -1,12 +1,21 @@
-import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from 'react';
 import {
   Group_logo,
   Refer_Steps_Icon,
   Vector_logo,
   add_friend_logo,
 } from '../../assets/index';
+import Button from '../Button';
+import ReferralForm from './ReferralForm';
 
 const ReferStepSection = () => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
   return (
     <div className='flex flex-col justify-center items-center gap-10 bg-referSectionBg px-[280px] py-7'>
       <p className='font-roboto font-[600px] text-[28px] leading-[43px]'>
@@ -42,6 +51,23 @@ const ReferStepSection = () => {
           </div>
         </div>
       </div>
+      <Button
+        children='Refer Now'
+        className='justify-center max-w-[152px]'
+        onClick={togglePopup}
+      />
+      <AnimatePresence>
+        {isPopupVisible && (
+          <motion.div
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -50, opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <ReferralForm />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

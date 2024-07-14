@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import { signupUser } from '../features/auth/authRequest';
@@ -17,8 +17,8 @@ const SignupPage = () => {
     console.log(data);
     setError('');
     try {
-        await dispatch(signupUser(data));
-        navigate('/login')
+      await dispatch(signupUser(data));
+      navigate('/login');
     } catch (error) {
       setError(error.message);
     }
@@ -75,6 +75,11 @@ const SignupPage = () => {
               type='submit'
               className='justify-center'
             />
+            <Link to='/login'>
+              <span className='text-textColorDark text-sm py-2 cursor-pointer hover:underline'>
+                Already have account? Go to Login
+              </span>
+            </Link>
           </div>
         </form>
       </div>

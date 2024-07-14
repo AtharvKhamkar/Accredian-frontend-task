@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import { loginUser } from '../features/auth/authRequest';
@@ -54,9 +54,11 @@ const LoginPage = () => {
             <Button children='Login' type='submit' className='justify-center' />
           </div>
         </form>
-        <span className='text-textColorDark text-sm py-2 cursor-pointer hover:underline'>
-          Don't have account? Create account
-        </span>
+        <Link to='/signup'>
+          <span className='text-textColorDark text-sm py-2 cursor-pointer hover:underline'>
+            Don't have account? Create account
+          </span>
+        </Link>
       </div>
     </div>
   );

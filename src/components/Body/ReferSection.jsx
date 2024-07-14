@@ -24,7 +24,6 @@ const ReferSection = () => {
             </span>
           </p>
         </div>
-        <Button children='Refer Now' className='justify-center max-w-[152px]' />
       </div>
       <div>
         <img src={ReferSection_Icon} alt='ReferSection' />

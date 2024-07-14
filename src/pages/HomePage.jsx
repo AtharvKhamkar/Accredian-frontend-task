@@ -1,7 +1,6 @@
 import React from 'react';
 import ReferSection from '../components/Body/ReferSection';
 import ReferStepSection from '../components/Body/ReferStepSection';
-import ReferralForm from '../components/Body/ReferralForm';
 import SectionNavbar from '../components/Body/SectionNavbar';
 
 const HomePage = () => {
@@ -10,7 +9,6 @@ const HomePage = () => {
       <SectionNavbar />
       <ReferSection />
       <ReferStepSection />
-      <ReferralForm />
     </div>
   );
 };
