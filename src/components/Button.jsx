@@ -11,7 +11,7 @@ const Button = ({
   return (
     <button
       type={type}
-      className={`flex w-full rounded-md py-2 px-[18px] gap-4 ${bgColor} ${textColor} ${className} cursor-pointer`}
+      className={`flex rounded-md py-2 px-[18px] gap-4 ${bgColor} ${textColor} ${className} cursor-pointer`}
       {...props}
     >
       {children}

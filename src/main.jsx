@@ -4,9 +4,10 @@ import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { store } from './app/store.js';
 import './index.css';
+import HomePage from './pages/HomePage.jsx';
 import Layout from './pages/Layout.jsx';
-import SignupPage from './pages/SignupPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
+import SignupPage from './pages/SignupPage.jsx';
 
 const route = createBrowserRouter([
   {
@@ -14,13 +15,17 @@ const route = createBrowserRouter([
     element: <Layout />,
     children: [
       {
+        path: '/',
+        element: <HomePage />,
+      },
+      {
         path: '/signup',
         element: <SignupPage />,
       },
       {
         path: '/login',
-        element:<LoginPage />
-      }
+        element: <LoginPage />,
+      },
     ],
   },
 ]);

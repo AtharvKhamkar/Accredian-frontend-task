@@ -8,10 +8,13 @@ export default {
     extend: {
       colors: {
         btnColor: '#1A73E8',
-        textColorDark:'#1A202C'
+        textColorDark: '#1A202C',
+        textColorGray: '#4B4B4B',
+        referSectionBg:'#EEF5FF'
       },
       fontFamily: {
-        inter:['Inter','sans-serif']
+        inter: ['Inter', 'sans-serif'],
+        roboto:['Roboto','sans-serif']
       }
     },
   },
