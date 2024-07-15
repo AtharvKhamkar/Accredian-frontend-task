@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { store } from './app/store.js';
+import AuthLayout from './components/AuthLayout.jsx';
 import './index.css';
 import HomePage from './pages/HomePage.jsx';
 import Layout from './pages/Layout.jsx';
@@ -24,7 +25,11 @@ const route = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <LoginPage />,
+        element: (
+          <AuthLayout authentication={true}>
+            <LoginPage />
+          </AuthLayout>
+        ),
       },
     ],
   },

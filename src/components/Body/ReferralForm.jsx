@@ -11,7 +11,7 @@ import { Button } from '../index';
 
 const ReferralForm = () => {
   const dispatch = useDispatch();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [error, setError] = useState('');
   const [courseLoading, setCourseLoading] = useState(false);
 
@@ -37,11 +37,12 @@ const ReferralForm = () => {
   const allCourses = useSelector(selectCourses);
   console.log(allCourses);
 
-  const sendReferral = (data) => {
+  const sendReferral = async (data) => {
     setError('');
     console.log(data);
     try {
-      dispatch(addReferral({ token, ...data }));
+      await dispatch(addReferral({ token, ...data }));
+      reset();
     } catch (error) {
       setError(error.message);
     }
